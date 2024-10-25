@@ -66,5 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error añadiendo el producto: ", e);
         }
     });
+
 });
 

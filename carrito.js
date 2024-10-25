@@ -1,5 +1,3 @@
-// carrito.js
-
 let cart = JSON.parse(localStorage.getItem('cart')) || []; // Cargar carrito desde localStorage
 let isQrGenerated = false; // Controla si el QR ya fue generado
 
