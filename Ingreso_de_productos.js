@@ -17,6 +17,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('btnGuardar').addEventListener('click', async (event) => {
         event.preventDefault(); // Evita el envío del formulario
@@ -63,5 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error añadiendo el producto: ", e);
         }
     });
+
 });
 
