@@ -12,37 +12,43 @@
             <ul>
                 <li><a href="Inicio_Principal.html">Inicio</a></li>
                 <li><a href="catalogo.html">Productos</a></li>
-                <li><a href="carrito.html" id="cart-button">🛒 Carrito (<span id="cart-count">0</span>)</a></li>
+                <li>
+                    <a href="carrito.html" id="cart-button" aria-label="Ver carrito de compras">🛒 Carrito (<span id="cart-count">0</span>)</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <h1>Carrito de Compras</h1>
+    <main>
+        <h1>Carrito de Compras</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="cart-items"></tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
 
-    <div id="cart-total-container">
-        <h3 id="cart-total">Total: Q0.00</h3>
-    </div>
-    
+        <div id="cart-total-container">
+            <h3 id="cart-total">Total: Q0.00</h3>
+        </div>
+        
+        <div>
+            <button id="checkout-button" class="btn">Generar Código QR para Pago</button>
+        </div>
 
-    <div>
-        <button id="checkout-button">Generar Código QR para Pago</button>
-    </div>
-
-    <!-- Contenedor para el código QR -->
-    <div id="qrcode"></div>
+        <!-- Contenedor para el código QR -->
+        <div id="qrcode-container">
+            <h3>Código QR para Pago:</h3>
+            <div id="qrcode"></div>
+        </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
