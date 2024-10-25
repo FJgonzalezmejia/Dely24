@@ -17,6 +17,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('btnGuardar').addEventListener('click', async (event) => {
         event.preventDefault(); // Evita el envío del formulario
@@ -63,5 +66,29 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error añadiendo el producto: ", e);
         }
     });
+    // Función para manejar el cierre de sesión
+document.getElementById("logoutButton").addEventListener("click", () => {
+    // Eliminar la información de la sesión
+    localStorage.removeItem("isLoggedIn");
+    alert("Has cerrado sesión.");
+    // Redireccionar a la página de inicio de sesión
+    window.location.href = "Login_Admin.html";
+});
+
+// Verificación del estado de la sesión
+window.addEventListener("load", () => {
+    if (!localStorage.getItem("isLoggedIn")) {
+        // Redireccionar a la página de inicio de sesión si no hay sesión
+        window.location.href = "Login_Admin.html";
+    }
+});
+
+// Ejemplo de inicio de sesión en la página de inicio de sesión (login.js)
+function login(email, password) {
+    // Suponiendo que la autenticación sea exitosa
+    localStorage.setItem("isLoggedIn", "true");
+    window.location.href = "Ingreso_de_productos.html";
+}
+
 });
 
